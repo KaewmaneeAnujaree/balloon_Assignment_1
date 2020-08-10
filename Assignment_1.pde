@@ -1,9 +1,10 @@
 // Name : Kaewmanee Anujaree
 // Date ; 10 August 2020
-// draw balloon , set color balloon , balloon float up
+// draw balloon , set color balloon , balloon float up , balloon have stop_button
 
 color bg = color(250,250,169);
 float circle_y ,y ;
+boolean stop_button = false;
 
 void setup(){
   size(500,500);
@@ -30,4 +31,14 @@ void ball(int circle_x,float circle_y,int y,int size_line){
   
   line(circle_x,circle_y+(y/2),circle_x,circle_y+(y/2)+size_line);
 
+}
+
+void mousePressed(){
+  stop_button =! stop_button;
+  if(stop_button){
+    noLoop();
+  }
+  else{
+    loop();
+  }
 }
